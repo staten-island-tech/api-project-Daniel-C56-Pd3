@@ -1,22 +1,18 @@
-const URL = "https://www.themealdb.com/api/json/v1/1/random.php";
-
 async function getData() {
-  try {
-    const response = await fetch(URL);
-
-    if (!response.ok) {
-      throw new Error("HTTP error: " + response.status);
-    }
-
-    const data = await response.json();
-
-    const meal = data.meals[0];
-
-    document.getElementById("api-response").textContent = meal.strMeal;
-
-  } catch (error) {
-    console.error(error);
+  try{
+  const response = await fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata");
+  if (response.status !=200){
+    throw new Error(response);
+  }
+  else{
+  const data = await response.json();
+  console.log(data)
+  
+  
+  /* data.cards.forEach((card)=> console.log(card)); */
+  }
+} catch (error){
+    console.log(error);
   }
 }
-
-getData();
+getData()
