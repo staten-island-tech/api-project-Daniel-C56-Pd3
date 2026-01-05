@@ -1,6 +1,6 @@
-async function getData() {
+async function getData() { 
   try{
-  const response = await fetch("https://www.themealdb.com/api/json/v1/1/search.php?s=Arrabiata");
+  const response = await fetch("https://www.themealdb.com/api/json/v1/1/categories.php");
   if (response.status !=200){
     throw new Error(response);
   }
@@ -8,8 +8,6 @@ async function getData() {
   const data = await response.json();
   console.log(data)
   
-  
-  /* data.cards.forEach((card)=> console.log(card)); */
   }
 } catch (error){
     console.log(error);
