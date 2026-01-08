@@ -1,4 +1,4 @@
-async function getData() {
+/* async function getData() {
   try {
     const response = await fetch(
       "https://www.themealdb.com/api/json/v1/1/filter.php?a=Chinese"
@@ -24,7 +24,7 @@ async function getData() {
     console.error(error);
   }
 }
-
+getData()
 const mealCardContainer = document.querySelector("#card-container");
 
 detailedMeals.forEach((meal) => {
@@ -46,4 +46,35 @@ detailedMeals.forEach((meal) => {
       </button>
     </div>`
   );
-});
+}); */
+
+async function getData() { 
+  try{
+  const response = await fetch("https://www.themealdb.com/api/json/v1/1/filter.php?a=Chinese");
+  if (response.status !=200){
+    throw new Error(response);
+  }
+  else{
+  const data = await response.json();
+  console.log(data)
+  
+  }
+} catch (error){
+    console.log(error);
+  }
+}
+getData()
+
+const mealCardContainer = document.querySelector(".container");
+fetch("https://www.themealdb.com/api/json/v1/1/filter.php?a=Chinese")
+  .then(res => res.json())
+  .then(data => {
+    document.getElementById("meals").innerHTML =
+  data.meals.map(meal => `
+    <div class="bg-blue p-2  rounded shadow w-16">
+      <p class="text-xs text-center mt-1">${meal.strMeal}</p>
+      <img src="${meal.strMealThumb}" class="w-16 h-16"/>
+    </div>
+  `)
+
+  });
