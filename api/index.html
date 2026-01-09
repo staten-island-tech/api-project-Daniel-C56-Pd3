@@ -4,12 +4,18 @@
     <meta charset="UTF-8" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-</head>
-<body>
-  <div id="meals"></div>
-  <script src ="src/index.js"> </script>
-</body>
+    <title>Chinese Meals</title>
+  </head>
+  <body class="bg-gray-100 font-[Caveat_Brush]">
+    <h1 class="text-3xl text-center my-6">Chinese Meals</h1>
+    <div
+      id="meals"
+      class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 px-4"
+    ></div>
+    <script src="src/index.js"></script>
+  </body>
 </html>
