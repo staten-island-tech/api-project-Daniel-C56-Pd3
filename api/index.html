@@ -1,27 +1,66 @@
-<body class="bg-gray-100 font-[Caveat_Brush]">
-  <main class="max-w-7xl mx-auto">
-
-    <h1 class="text-3xl text-center my-6">Meal Explorer</h1>
-
-    <form id="searchForm" class="flex justify-center gap-2 mb-6">
-      <label for="areaInput" class="sr-only">Cuisine</label>
-      <input
-        id="areaInput"
-        type="text"
-        placeholder="Enter cuisine (e.g. Chinese)"
-        class="p-2 rounded border"
-      />
-      <button class="bg-black text-white px-4 py-2 rounded">
-        Search
-      </button>
-    </form>
-
-    <section
+/*<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chinese Meals</title>
+  </head>
+  <body class="bg-gray-100 font-[Caveat_Brush]">
+    <h1 class="text-3xl text-center my-6">Chinese Meals</h1>
+    <div
       id="meals"
       class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 px-4"
-    ></section>
+    ></div>
+    <script src="src/index.js"></script>
+  </body>
+</html>*/
 
-  </main>
 
-  <script src="src/index.js"></script>
-</body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meal Finder</title>
+  </head>
+
+  <body class="bg-gray-100 font-sans">
+    <header class="text-center my-6">
+      <h1 class="text-3xl font-bold">Meal Finder</h1>
+    </header>
+
+    <main class="max-w-6xl mx-auto px-4">
+      <form
+        id="searchForm"
+        class="flex justify-center gap-2 mb-6"
+        aria-label="Search meals by area"
+      >
+        <label for="searchInput" class="sr-only">Cuisine Area</label>
+        <input
+          id="searchInput"
+          type="text"
+          placeholder="Enter cuisine (e.g. Italian)"
+          class="border rounded px-3 py-1"
+        />
+        <button
+          type="submit"
+          class="bg-blue-600 text-white px-4 py-1 rounded"
+        >
+          Search
+        </button>
+      </form>
+
+      <section
+        id="meals"
+        class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4"
+      ></section>
+    </main>
+
+    <script src="/src/index.js"></script>
+  </body>
+</html>
